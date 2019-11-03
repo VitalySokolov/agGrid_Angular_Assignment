@@ -1,0 +1,21 @@
+<div class="toolbar">
+  <button (click)="toggleSelectionMode()">Toggle Selection Mode</button>
+  <div>Total video: {{videoItems.length}}</div>
+  <div>Selected video: {{selectedRows}}</div>
+</div>
+<ag-grid-angular
+  *ngIf="videoItems.length > 0"
+  style="width: 100%; height: 85vh;"
+  class="ag-theme-balham"
+  [rowData]="videoItems"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColDef"
+  [getContextMenuItems]="getContextMenuItems"
+  [frameworkComponents]="frameworkComponents"
+  suppressRowClickSelection
+  [rowSelection]="rowSelection"
+  [rowDeselection]="true"
+  (gridReady)="onGridReady($event)"
+  (selectionChanged)="onSelectionChanged($event)"
+>
+</ag-grid-angular>

@@ -1,0 +1,6 @@
+<app-video-search [videoItems]="videoItems"
+                  [nextPageToken]="nextPageToken"
+                  [prevPageToken]="prevPageToken"
+                  (newPageRequested)="refreshData($event)"
+>
+</app-video-search>
